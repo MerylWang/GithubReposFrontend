@@ -12,16 +12,20 @@ import ForkRightIcon from '@mui/icons-material/ForkRight';
 
 function RepoCard(props) {
     const repo = props.repo; 
-
-    // TODO: enabled scrollling within a card
-    // TODO: make all cards constant height 
-    // TODO: left align button with rest of content 
-    // TODO: pass in stargazers and forks urls 
-    // TODO: add hover effect for card?
-
+    // TODO: pass in stargazers and forks urls (need to change model, serializer & seed data again)
     return (
-        <Box sx={{ minWidth: 275, boxShadow:1}}>
-            <Card variant="outlined" >
+        <Box sx={{ }}>
+            <Card variant="outlined" 
+            sx={{
+                height:200, 
+                width:'auto', 
+                maxWidth:500, 
+                overflow:'scroll', 
+                '&:hover': {
+                    boxShadow:2
+                },
+            }}
+            >
                 <CardContent>
                     <Typography variant="h5" component="div">
                         {repo.name}
@@ -38,8 +42,16 @@ function RepoCard(props) {
                 
                     <ForkRightIcon />{repo.forks_count} forks
 
-                    <CardActions>
-                        <Button size='small' href={repo.html_url}>Visit Repo</Button>
+                    <CardActions sx={{paddingLeft:0}}>
+                        {/* hello */}
+                        <Button 
+                            size='small' 
+                            href={repo.html_url}
+                            sx={{paddingLeft:0}}
+                        >
+                            Visit Repo
+                        </Button>
+                        
                     </CardActions>
                 </CardContent>
             </Card>

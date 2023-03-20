@@ -40,11 +40,12 @@ function RepoBoard(props) {
     return (
         // TODO implement scrolling
         <Box sx={{ 
-            // width: '50%', 
-            height:'100%',
-            // maxWidth: 360, 
+            width:'auto',
+            height:'auto',
+            maxWidth:'100%',
             bgcolor: 'background.paper', 
             boxShadow:1, 
+            overflow:'scroll'
             }}
         >
             <Typography 
@@ -58,7 +59,7 @@ function RepoBoard(props) {
             <Grid container spaing={2}>
                 {/* TODO: reduce number of cards per row when window width decreases */}
                 {repos.map((repo) => (
-                    <Grid item xs={4} padding={2}>
+                    <Grid item xs={6} padding={2}>
                          <RepoCard repo={repo} />
                     </Grid>
                 ))}
