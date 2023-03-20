@@ -55,6 +55,7 @@ function UserFinder(props) {
           </ListItemButton>
         ))}
       </List>
+      {/* TODO: align button at bottom center of parent */}
       <Box textAlign="center" sx={{ paddingTop: 5 }}>
         <Button
           variant="contained"
