@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+deployed here: https://adi-github-repos-exercise.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -83,3 +85,13 @@ npm start
 ```
 
 go to http://localhost:3000/
+
+### notes on deployment
+
+- had to revert to heroku-20 due to sunsetting react buildpack
+
+```
+=====! create-react-app-buildpack has reached end-of-life 🌅
+       This build may succeed, but the buildpack is no longer maintained.
+       On the Heroku-22 stack and beyond, this may fail to build at all.
+```
