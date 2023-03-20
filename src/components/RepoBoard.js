@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
@@ -38,7 +35,6 @@ function RepoBoard(props) {
   }, [selectedUsername])
 
   return (
-    // TODO implement scrolling
     <Box sx={{
       width: 'auto',
       height: 'auto',
