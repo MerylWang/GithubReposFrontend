@@ -8,16 +8,18 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
 function UserFinder(props) {
-  // const USERS_API = 'http://localhost:8000/users/'
   // TODO: put this in env
   const BASE_URL = "https://aqueous-journey-63498.herokuapp.com";
-  const USERS_API = `${BASE_URL}/users`;
+  // const BASE_URL = "http://localhost:8000";
+
   const [users, setUsers] = useState([]);
 
   const selectedUsername = props.selectedUsername;
 
   // fetch all users data
   useEffect(() => {
+    const USERS_API = `${BASE_URL}/users`;
+
     fetch(USERS_API)
       .then((res) => res.json())
       .then((json) => {

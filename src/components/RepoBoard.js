@@ -1,49 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 
-import RepoCard from './RepoCard';
-
+import RepoCard from "./RepoCard";
 
 function RepoBoard(props) {
   const [repos, setRepos] = useState([]);
   const selectedUsername = props.selectedUsername;
 
-  // TODO: put this in ENV 
-  const BASE_URL = 'https://aqueous-journey-63498.herokuapp.com';
+  // TODO: put this in ENV
+  const BASE_URL = "https://aqueous-journey-63498.herokuapp.com";
+  // const BASE_URL = "http://localhost:8000";
 
-
-  // fetch data of repos to be displayed 
+  // fetch data of repos to be displayed
   useEffect(() => {
-    // TODO: update this api, use props.selectedUsername to construct api endpoint
-    // const REPOS_API = 'http://localhost:8000/repos/'
-    // TODO: display all or no repos if no username selected 
     if (selectedUsername) {
-      // const REPOS_API = `http://localhost:8000/users/${selectedUsername}/repos`
       const REPOS_API = `${BASE_URL}/users/${selectedUsername}/repos`;
       fetch(REPOS_API)
         .then((res) => res.json())
         .then((json) => {
-          setRepos(json)
-        })
+          setRepos(json);
+        });
     } else {
-      // reset board if username selection removed 
-      setRepos([])
+      // reset board if username selection removed
+      setRepos([]);
     }
-  }, [selectedUsername])
+  }, [selectedUsername]);
 
   return (
-    <Box sx={{
-      width: 'auto',
-      height: 'auto',
-      maxWidth: '100%',
-      maxHeight: '100%',
-      bgcolor: 'background.default',
-      boxShadow: 1,
-      overflow: 'scroll'
-    }}
+    <Box
+      sx={{
+        width: "auto",
+        height: "auto",
+        maxWidth: "100%",
+        maxHeight: "100%",
+        bgcolor: "background.default",
+        boxShadow: 1,
+        overflow: "scroll",
+      }}
     >
       <Typography
         color="text.secondary"
@@ -61,8 +57,7 @@ function RepoBoard(props) {
         ))}
       </Grid>
     </Box>
-  )
-
+  );
 }
 
-export default RepoBoard
+export default RepoBoard;
