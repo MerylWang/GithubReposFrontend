@@ -10,7 +10,10 @@ import Typography from '@mui/material/Typography';
 // TODO: add a textbox that filters displayed usernames by input
 // TODO: add button for removing selection  
 function UserFinder(props) {
-    const USERS_API = 'http://localhost:8000/users/'
+    // const USERS_API = 'http://localhost:8000/users/'
+    // TODO: put this in env
+    const BASE_URL ='https://aqueous-journey-63498.herokuapp.com'
+    const USERS_API = `${BASE_URL}/users`
     const [users, setUsers] = useState([])
 
     // fetch all users data

@@ -11,8 +11,12 @@ import RepoCard from './RepoCard';
 
 
 function RepoBoard(props) {
-    const [repos, setRepos] = useState([])
+    const [repos, setRepos] = useState([]);
     const selectedUsername = props.selectedUsername;
+
+    // TODO: put this in ENV 
+    const BASE_URL ='https://aqueous-journey-63498.herokuapp.com';
+
 
     // fetch data of repos to be displayed 
     useEffect(() => {
@@ -20,7 +24,8 @@ function RepoBoard(props) {
         // const REPOS_API = 'http://localhost:8000/repos/'
         // TODO: display all or no repos if no username selected 
         if (selectedUsername) {
-            const REPOS_API = `http://localhost:8000/users/${selectedUsername}/repos`
+            // const REPOS_API = `http://localhost:8000/users/${selectedUsername}/repos`
+            const REPOS_API = `${BASE_URL}/users/${selectedUsername}/repos`;
             fetch(REPOS_API)
                 .then((res) => res.json())
                 .then((json) => {
