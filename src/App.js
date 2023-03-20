@@ -72,11 +72,15 @@ function App() {
           padding={2}
           sx={{
             height: "auto",
+            minHeight: 500,
             maxHeight: 700,
             overflow: "scroll",
           }}
         >
-          <UserFinder setUsername={setUsername} />
+          <UserFinder
+            selectedUsername={selectedUsername}
+            setUsername={setUsername}
+          />
         </Grid>
 
         <Grid
